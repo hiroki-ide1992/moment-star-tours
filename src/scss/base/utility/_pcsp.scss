@@ -1,0 +1,15 @@
+
+/* 表示非表示
+------------------------------ */
+.-pcOnly{
+	display: block;
+	@include mq(only-md){
+		display: none;
+	}
+}
+.-spOnly{
+	display: none;
+	@include mq(only-md){
+		display: block;
+	}
+}

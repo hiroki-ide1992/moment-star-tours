@@ -1,0 +1,36 @@
+// css-mqpacker は メディアクエリの記述順 にまとまる
+
+@media screen and (max-width: 1366px) { /**/}
+@media screen and (max-width: 1000px) { /**/}
+@media screen and (min-width: 769px) { /**/}
+@media screen and (max-width: 768px) { /**/}
+@media screen and (max-width: 414px) { /**/}
+@media screen and (max-width: 320px) { /**/}
+
+@mixin mq($size) {
+
+  @if $size == "only-note" {
+    @media screen and (max-width: 1366px) { @content;}
+  }
+
+  @if $size == "only-tab" {
+    @media screen and (max-width: 1000px) { @content;}
+  }
+
+  @if $size == "only-lg" {
+    @media screen and (min-width: 769px) { @content;}
+  }
+
+  @if $size == "only-md" {
+    @media screen and (max-width: 768px) { @content;}
+  }
+
+  @if $size == "only-smart" {
+    @media screen and (max-width: 414px) { @content;}
+  }
+
+  @if $size == "only-sm" {
+    @media screen and (max-width: 320px) { @content;}
+  }
+
+}

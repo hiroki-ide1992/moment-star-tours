@@ -1,0 +1,68 @@
+@import './base/mixin/media.scss';
+@import './base/setting/font.scss';
+@import './base/setting/base.scss';
+@import './base/utility/**.scss';
+
+// コンポーネント
+@import './components/dateGradation.scss';
+@import './components/constellation.scss';
+@import './components/logo.scss';
+@import './components/startButton.scss';
+@import './components/startText.scss';
+@import './components/switchingCover.scss';
+@import './components/top.scss';
+@import './components/tour.scss';
+
+
+@keyframes tourOpening {
+  0%{
+    transform: scale(1);
+  }
+  20%{
+    opacity: 1;
+  }
+  100%{
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+@keyframes trainOpening {
+  0%{
+    background-position: 50px 80px;
+  }
+
+  100%{
+    background-position: -350px 80px;
+  }
+}
+
+
+.js-animationControl {
+
+  &.-scene01 {
+    .top__scaleInner {
+      animation: tourOpening 5s ease-in-out forwards;
+      pointer-events: none;
+      .startButton__train {
+        animation: trainOpening 10s forwards;
+        animation-delay: .5s;
+      }
+    }
+    .dateGradation__blackCoverInner {
+      opacity: 1;
+    }
+  }
+
+  &.-scene02 {
+    .dateGradation__text {
+      transform: translate(0, 0);
+    }
+  }
+
+  &.-scene03 {
+    .dateGradation__blackCoverInner {
+      height: 100px;
+    }
+  }
+
+}

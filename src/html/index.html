@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/common.css" />
+    <link rel="icon" href="/assets/img/common/favicon.ico">
+    <meta name="author" content="hiroki ide" />
+    <meta name="description" content="MOMENT STAR TOURS は現在地、時間を取得して今見えてる星空を投影します"/>
+    <meta property="og:site_name" content="MOMENT STAR TOURS" />
+    <meta property="og:title" content="MOMENT STAR TOURS" />
+    <meta property="og:description" content="MOMENT STAR TOURS は現在地、時間を取得して今見えてる星空を投影します" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mock.hiroki-ide.site/" />
+    <meta property="og:image" content="/assets/img/common/og.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="https://mock.hiroki-ide.site/" />
+    <meta name="twitter:image" content="/assets/img/common/og.jpg" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/common/favicon.ico" />
+    <title>MOMENT STAR TOURS</title>
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <meta name="robots" content="noindex" />
+    <meta name="robots" content="nofollow" />
+  </head>
+  <body class="dateGradation js-animationControl">
+    <div class="dateGradation__backImage">
+      <audio id="BUMP_OF_CHICKEN"><source src="/assets/img/common/bgm_tentai.mp3" type="audio/mp3"></audio>
+
+      <div class="dateGradation__blackCover">
+        <div class="dateGradation__end js-middleEnd"><img class="dateGradation__endImage" src="/assets/img/common/end.svg" alt="おわる"></div>
+        <div class="dateGradation__blackCoverInner">
+          <div class="dateGradation__date">
+            <div class="dateGradation__text dateGradation__text--min js-setYear">年</div>
+            <div class="dateGradation__text dateGradation__text--min js-setMonth">月</div>
+            <div class="dateGradation__text dateGradation__text--min js-setDay">日</div>
+          </div>
+          <div class="dateGradation__date">
+            <div class="dateGradation__text js-seteHours">:</div>
+            <div class="dateGradation__text dateGradation__text--min js-seteMinutes">の</div>
+            <div class="dateGradation__text">星</div>
+            <div class="dateGradation__text">空</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="top">
+        <div class="top__scaleInner">
+          <div class="logo">
+            <h1 class="logo__top"><img class="logo__image" src="/assets/img/common/logo.png" alt="MOMENT STAR TOURS"></h1>
+            <div class="logo__back"><img class="logo__image" src="/assets/img/common/logo_back.png" alt=""></div>
+          </div>
+          <div class="top__layout">
+            <div class="startButton js-tourStart">
+              <div class="startButton__train"></div>
+              <div class="startButton__circle"><img class="startButton__image" src="/assets/img/common/circle.png" alt=""></div>
+            </div>
+            <div class="startText">
+              <div class="startText__arrow"><img class="startText__image" src="/assets/img/common/arrow01.svg" alt=""></div>
+              <img class="startText__image" src="/assets/img/common/tap_to_start.svg" alt="Tap to start">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tour">
+        <div class="tour__scaleInner">
+          <ul class="constellation" id="js-constellation"></ul>
+          <div class="tour__fin js-finImage">
+            <img class="tour__image" src="/assets/img/common/fin.png" alt="">
+            <img class="tour__image" src="/assets/img/common/fin_back.png" alt="">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script class="js-constellationTemplate" type="text/template">
+      <% _.each(items, function(item){ %>
+        <li class="constellation__item js-constellationItem">
+          <div class="constellation__top js-constellationItemTop">
+            <div class="constellation__thumb">
+              <img class="constellation__image" src="<%- item[2].starIcon %>">
+            </div>
+            <div class="constellation__title"><%- item[2].jpName %></div>
+          </div>
+          <div class="constellation__layout">
+            <div class="constellation__left">
+              <div class="constellation__thumb">
+                <img class="constellation__image" src="<%- item[1].starIcon %>">
+              </div>
+              <div class="constellation__title"><%- item[1].jpName %></div>
+            </div>
+            <div class="constellation__right">
+              <div class="constellation__thumb">
+                <img class="constellation__image" src="<%- item[0].starIcon %>">
+              </div>
+              <div class="constellation__title"><%- item[0].jpName %></div>
+            </div>
+          </div>
+        </li>
+      <% }); %>
+    </script>
+    <script src="/assets/js/vendor.js"></script>
+    <script src="/assets/js/common.js"></script>
+  </body>
+</html>

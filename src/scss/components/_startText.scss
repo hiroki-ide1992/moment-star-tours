@@ -1,0 +1,28 @@
+@import '../base/mixin/media.scss';
+
+@keyframes arrowMove {
+  from{
+    transform: translateY(0px);
+  }
+  to{
+    transform: translateY(-10px);
+  }
+}
+
+.startText {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  &__arrow {
+    width: 25px;
+    margin: 30px 0 10px;
+    animation: arrowMove 1s infinite alternate;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

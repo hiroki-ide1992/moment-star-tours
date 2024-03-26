@@ -1,0 +1,32 @@
+@include mq(only-lg) {
+  @for $i from 0 through 20 {
+    .mt#{$i*5}-lg {
+      margin-top: #{$i * 5}px !important;
+    }
+    .mb#{$i*5}-lg {
+      margin-bottom: #{$i * 5}px !important;
+    }
+  }
+}
+
+@include mq(only-md) {
+  @for $i from 0 through 20 {
+    .mt#{$i*5}-md {
+      margin-top: #{$i * 5}px !important;
+    }
+    .mb#{$i*5}-md {
+      margin-bottom: #{$i * 5}px !important;
+    }
+  }
+}
+
+@include mq(only-sm) {
+  @for $i from 0 through 20 {
+    .mt#{$i*5}-sm {
+      margin-top: #{$i * 5}px !important;
+    }
+    .mb#{$i*5}-sm {
+      margin-bottom: #{$i * 5}px !important;
+    }
+  }
+}

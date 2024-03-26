@@ -1,0 +1,38 @@
+@include mq(only-lg){
+
+  @for $i from 0 through 20 {
+    .pt#{$i*5}-lg{
+      padding-top: #{$i*5}px !important;
+    }
+    .pb#{$i*5}-lg{
+      padding-bottom: #{$i*5}px !important;
+    }
+  }
+
+}
+
+@include mq(only-md){
+
+  @for $i from 0 through 20 {
+    .pt#{$i*5}-md{
+      padding-top: #{$i*5}px !important;
+    }
+    .pb#{$i*5}-md{
+      padding-bottom: #{$i*5}px !important;
+    }
+  }
+
+}
+
+@include mq(only-sm){
+
+  @for $i from 0 through 20 {
+    .pt#{$i*5}-sm{
+      padding-top: #{$i*5}px !important;
+    }
+    .pb#{$i*5}-sm{
+      padding-bottom: #{$i*5}px !important;
+    }
+  }
+
+}
